@@ -2,7 +2,7 @@
 {
     public class Products
     {
-        private long Id { get; set; }
+        public long Id { get; set; }
         public string Name { get; set; }
         public decimal UnitValue { get; set; }
         public string Seller { get; set; }
