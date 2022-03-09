@@ -2,11 +2,10 @@
 {
     public class Products
     {
-        public long Id { get; set; }
+        public long Id { get; private set; }
         public string Name { get; set; }
         public decimal UnitValue { get; set; }
         public string Seller { get; set; }
-        public int Quantity { get; set; }
         public DateTime CreatedAt { get; private set; }
         public DateTime UpdatedAt { get; set; }
         public bool IsActive { get; set; }

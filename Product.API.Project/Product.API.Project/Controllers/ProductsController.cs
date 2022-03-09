@@ -82,7 +82,7 @@ namespace Product.API.Project.Controllers
             _context.Product.Add(products);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetProducts), new { id = products.Id }, products);
+            return CreatedAtAction(nameof(GetProducts), new { id = products.Id, name = products.Name, unitValue = products.UnitValue, seller = products.Seller}, products);
         }
 
         // DELETE: api/Products/5
