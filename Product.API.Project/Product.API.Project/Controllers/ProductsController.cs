@@ -1,13 +1,8 @@
-﻿#nullable disable
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Product.API.Project.Data;
 using Product.API.Project.Entities;
+using Product.API.Project.Shared;
 
 namespace Product.API.Project.Controllers
 {
@@ -24,9 +19,13 @@ namespace Product.API.Project.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Products>>> GetProduct()
+        public async Task<ActionResult<IEnumerable<Products>>> GetProduct(PageParameters pageParameters)
         {
-            return await _context.Products.ToListAsync();
+             return Ok (_context.Set<Products>()
+            .OrderBy(on => on.Name)
+            .Skip((pageParameters.PageNumber - 1) * pageParameters.PageSize)
+            .Take(pageParameters.PageSize)
+            .ToList());
         }
 
         // GET: api/Products/5
