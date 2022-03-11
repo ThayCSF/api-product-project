@@ -47,6 +47,7 @@ namespace Product.API.Project.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProducts(Guid id, Products products)
         {
+
             if (id != products.Id)
             {
                 return BadRequest();
@@ -86,7 +87,7 @@ namespace Product.API.Project.Controllers
 
         // DELETE: api/Products/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProducts(long id)
+        public async Task<IActionResult> DeleteProducts(Guid id)
         {
             var products = await _context.Products.FindAsync(id);
             if (products == null)
