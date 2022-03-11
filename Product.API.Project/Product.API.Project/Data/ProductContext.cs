@@ -8,8 +8,10 @@ namespace Product.API.Project.Data
         public ProductContext(DbContextOptions<ProductContext> options)
             : base(options)
         {
+            Database.EnsureCreated();
         }
 
-        public DbSet<Products> Product { get; set; } = null!;
+        public DbSet<Products> Products { get; set; } = null!;
+
     }
 }
