@@ -31,7 +31,7 @@ namespace Product.API.Project.Controllers
 
         // GET: api/Products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Products>> GetProducts(long id)
+        public async Task<ActionResult<Products>> GetProducts(Guid id)
         {
             var products = await _context.Products.FindAsync(id);
 
@@ -46,7 +46,7 @@ namespace Product.API.Project.Controllers
         // PUT: api/Products/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProducts(long id, Products products)
+        public async Task<IActionResult> PutProducts(Guid id, Products products)
         {
             if (id != products.Id)
             {
@@ -101,7 +101,7 @@ namespace Product.API.Project.Controllers
             return NoContent();
         }
 
-        private bool ProductsExists(long id)
+        private bool ProductsExists(Guid id)
         {
             return _context.Products.Any(e => e.Id == id);
         }
