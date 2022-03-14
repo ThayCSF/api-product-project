@@ -13,6 +13,8 @@
           "Microsoft.EntityFrameworkCore.Tools": "6.0.3",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.2",
           "Swashbuckle.AspNetCore": "6.3.0",
+          "System.Linq": "4.3.0",
+          "System.Linq.Expressions": "4.3.0",
           "runtime.unix.System.Console": "4.3.1",
           "runtime.unix.System.Runtime.Extensions": "4.3.1"
         },

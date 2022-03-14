@@ -21,6 +21,8 @@
     <PackageReference Include="runtime.unix.System.Console" Version="4.3.1" />
     <PackageReference Include="runtime.unix.System.Runtime.Extensions" Version="4.3.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
   </ItemGroup>
 
 </Project>

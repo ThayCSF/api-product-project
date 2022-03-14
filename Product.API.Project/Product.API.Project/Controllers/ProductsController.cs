@@ -11,7 +11,7 @@ namespace Product.API.Project.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly ProductContext _context;
-
+        
         public ProductsController(ProductContext context)
         {
             _context = context;
@@ -47,7 +47,6 @@ namespace Product.API.Project.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProducts(Guid id, Products products)
         {
-
             if (id != products.Id)
             {
                 return BadRequest();

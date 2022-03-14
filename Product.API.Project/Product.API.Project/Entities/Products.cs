@@ -2,7 +2,7 @@
 {
     public class Products
     {
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
         public string? Name { get; set; }
         public decimal UnitValue { get; set; }
         public string? Seller { get; set; }
@@ -18,6 +18,5 @@
             UpdatedAt = now;
             IsAvailable = true;
         }
-       
     }
 }
