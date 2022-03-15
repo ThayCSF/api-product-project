@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Product.API.Project.Data;
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ProductContext>(options =>
        options.UseSqlServer(builder.Configuration.GetConnectionString("ProductContextDb")));
+builder.Services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 var app = builder.Build();
 
@@ -20,6 +22,8 @@ if (builder.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseMvc();
 
 app.MapControllers();
 
