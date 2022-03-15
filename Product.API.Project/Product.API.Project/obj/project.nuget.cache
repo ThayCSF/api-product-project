@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "u1fkkAsewE7yWxCh69Naov8EbGJzA/Fq6ZXWmSvvI+wFbdwlBI2cIYo1lHJ5aZ36ejCSTdFg1lLZ+5610VQI+g==",
+  "dgSpecHash": "IXF6a/BW8zrWZKKDt00amttKuXg1SnshqphY8cA78OqWqOdzyUK7d5l76C81wKLkqXO5o/SghDpI7JoEqUXAEg==",
   "success": true,
   "projectFilePath": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\thaynacsf\\.nuget\\packages\\fluentassertions\\6.5.1\\fluentassertions.6.5.1.nupkg.sha512",
     "C:\\Users\\thaynacsf\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\thaynacsf\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\thaynacsf\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
