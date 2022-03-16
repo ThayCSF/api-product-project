@@ -9,15 +9,14 @@ using Xunit;
 
 namespace Product.API.Tests
 {
-    public class TestingProductsApplication : IClassFixture<TestingProductsFactory<Program>>
+    public class TestingProductsApplication
 
     {
         private readonly HttpClient _client;
-        private readonly TestingProductsFactory<Program>
-            _factory;
+        private readonly TestingProductsFactory _factory;
 
         public TestingProductsApplication(
-            TestingProductsFactory<Program> factory)
+            TestingProductsFactory factory)
         {
             _factory = factory;
             _client = factory.CreateClient(new WebApplicationFactoryClientOptions
@@ -79,7 +78,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await _client.UpdateAsJsonAsync($"/api/products/{id}", product);
+            var response = await _client.PutAsync($"/api/products/{id}", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -98,7 +97,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await _client.UpdateAsJsonAsync($"/api/products/{id}", product);
+            var response = await _client.PutAsync($"/api/products/{id}", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.NotFound);
@@ -117,7 +116,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await _client.PostAsJsonAsync("/api/products", product);
+            var response = await _client.PostAsync("/api/products", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
@@ -135,7 +134,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await _client.PostAsJsonAsync("/api/products", product);
+            var response = await _client.PostAsync("/api/products", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.Created);
