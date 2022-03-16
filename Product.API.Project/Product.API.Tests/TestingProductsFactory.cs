@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Product.API.Project.Data;
-using System.Configuration;
 using System.Linq;
 
 namespace Product.API.Tests
@@ -24,8 +23,7 @@ namespace Product.API.Tests
 
                 services.AddDbContext<ProductContext>((options, context) =>
                 {
-                    context.UseSqlServer(
-                        Configuration.GetConnectionString("ProductContextDb"));
+                    context.UseSqlServer(Configuration.GetConnectionString("ProductContextDb"));
                 });
 
                 var sp = services.BuildServiceProvider();

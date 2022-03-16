@@ -1,15 +1,31 @@
 using FluentAssertions;
+using Microsoft.AspNetCore.Mvc.Testing;
 using Product.API.Project.Entities;
 using System;
 using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Xunit;
 
 namespace Product.API.Tests
 {
-    public class TestingProductsApplication
+    public class TestingProductsApplication : IClassFixture<TestingProductsFactory<Program>>
 
     {
+        private readonly HttpClient _client;
+        private readonly TestingProductsFactory<Program>
+            _factory;
+
+        public TestingProductsApplication(
+            TestingProductsFactory<Program> factory)
+        {
+            _factory = factory;
+            _client = factory.CreateClient(new WebApplicationFactoryClientOptions
+            {
+                AllowAutoRedirect = false
+            });
+        }
+
         [Fact(DisplayName = "Get all products")]
         public async Task Get_AllProduct_ShouldReturnListWithContent()
         {
@@ -18,7 +34,7 @@ namespace Product.API.Tests
             var pageSize = 2;
 
             // Act
-            var response = await Client.GetAsync("/api/products", pageNumber, pageSize); 
+            var response = await _client.GetAsync("/api/products", pageNumber, pageSize); 
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -31,7 +47,7 @@ namespace Product.API.Tests
             var productId = "e978f409-9955-497d-8f97-917dfc054b80";
 
             // Act
-            var response = await Client.GetAsync($"/api/products/{productId}");
+            var response = await _client.GetAsync($"/api/products/{productId}");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.NoContent);
@@ -44,7 +60,7 @@ namespace Product.API.Tests
             var productId = "05a41567-b511-441b-b6aa-b74f41fb7a09";
 
             // Act
-            var response = await Client.GetAsync($"/api/products/{productId}");
+            var response = await _client.GetAsync($"/api/products/{productId}");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -63,7 +79,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await Client.UpdateAsJsonAsync($"/api/products/{id}", product);
+            var response = await _client.UpdateAsJsonAsync($"/api/products/{id}", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -82,7 +98,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await Client.UpdateAsJsonAsync($"/api/products/{id}", product);
+            var response = await _client.UpdateAsJsonAsync($"/api/products/{id}", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.NotFound);
@@ -101,7 +117,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await Client.PostAsJsonAsync("/api/products", product);
+            var response = await _client.PostAsJsonAsync("/api/products", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
@@ -119,7 +135,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await Client.PostAsJsonAsync("/api/products", product);
+            var response = await _client.PostAsJsonAsync("/api/products", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.Created);
@@ -132,7 +148,7 @@ namespace Product.API.Tests
             var id = Guid.NewGuid;
 
             // Act
-            var response = await Client.DeleteAsync($"/api/products/{id}");
+            var response = await _client.DeleteAsync($"/api/products/{id}");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.NotFound);
@@ -145,7 +161,7 @@ namespace Product.API.Tests
             var productId = "05a41567-b511-441b-b6aa-b74f41fb7a09";
 
             // Act
-            var response = await Client.DeleteAsync($"/api/products/productId={productId}");
+            var response = await _client.DeleteAsync($"/api/products/productId={productId}");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
