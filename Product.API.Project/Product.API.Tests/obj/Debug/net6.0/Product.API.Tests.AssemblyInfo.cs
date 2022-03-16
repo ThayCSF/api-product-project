@@ -18,6 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyProductAttribute("Product.API.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Product.API.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
+[assembly: System.Runtime.CompilerServices.InternalsVisibleTo("Product.API.Tests")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.
 
