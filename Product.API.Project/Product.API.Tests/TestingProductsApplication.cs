@@ -57,7 +57,7 @@ namespace Product.API.Tests
         public async Task Get_ExistentProduct_ShouldReturnContent()
         {
             // Arrange
-            var productId = "05a41567-b511-441b-b6aa-b74f41fb7a09";
+            var productId = "0f2130b5-025f-49c1-828e-d6c3f4da4dbc";
 
             // Act
             var response = await _client.GetAsync($"/api/products?id={productId}");
@@ -70,12 +70,12 @@ namespace Product.API.Tests
         public async Task UpdateValidProduct_ShouldReturnOk()
         {
             // Arrange  
-            var id = "05a41567-b511-441b-b6aa-b74f41fb7a09";
+            var id = "85a3ad21-46f2-4dc6-be04-0245beb6299d";
             var product = new Products ()
             {   
                 Id = Guid.Parse(id),
                 Name = "Updated",
-                UnitValue = 1.99,
+                UnitValue = 19,
                 Seller = "Success"
             };
 
@@ -94,7 +94,7 @@ namespace Product.API.Tests
             var product = new Products()
             {
                 Name = "Updated",
-                UnitValue = 1.99,
+                UnitValue = 20,
                 Seller = "Success"
             };
 
@@ -131,7 +131,7 @@ namespace Product.API.Tests
             var product = new Products()
             {
                 Name = "Tambor",
-                UnitValue = 28.99,
+                UnitValue = 29,
                 Seller = "Assa-Bloy"
             };
 
@@ -159,7 +159,7 @@ namespace Product.API.Tests
         public async Task Delete_ExistentProduct_ShouldReturnOk()
         {
             // Arrange
-            var productId = "05a41567-b511-441b-b6aa-b74f41fb7a09";
+            var productId = "dfc89fda-d579-448f-82d5-422b6b103c29";
 
             // Act
             var response = await _client.DeleteAsync($"/api/products/productId={productId}");
@@ -167,10 +167,6 @@ namespace Product.API.Tests
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
         }
-
-
-        //Resolver configuração para uso do "Client", e demais configurações
-        //Nos casos de sucesso de produto existente, pegar o id correto
 
     }
 }
