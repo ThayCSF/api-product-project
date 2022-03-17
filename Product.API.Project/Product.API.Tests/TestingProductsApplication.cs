@@ -4,6 +4,7 @@ using Product.API.Project.Entities;
 using System;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -33,7 +34,7 @@ namespace Product.API.Tests
             var pageSize = 2;
 
             // Act
-            var response = await _client.GetAsync("/api/products", pageNumber, pageSize); 
+            var response = await _client.GetAsync($"/api/products?pageNumber={pageNumber}pageSize={pageSize}"); 
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -46,7 +47,7 @@ namespace Product.API.Tests
             var productId = "e978f409-9955-497d-8f97-917dfc054b80";
 
             // Act
-            var response = await _client.GetAsync($"/api/products/{productId}");
+            var response = await _client.GetAsync($"/api/products?id={productId}");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.NoContent);
@@ -59,7 +60,7 @@ namespace Product.API.Tests
             var productId = "05a41567-b511-441b-b6aa-b74f41fb7a09";
 
             // Act
-            var response = await _client.GetAsync($"/api/products/{productId}");
+            var response = await _client.GetAsync($"/api/products?id={productId}");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -68,17 +69,18 @@ namespace Product.API.Tests
         [Fact(DisplayName = "Update Valid Product")]
         public async Task UpdateValidProduct_ShouldReturnOk()
         {
-            // Arrange
+            // Arrange  
             var id = "05a41567-b511-441b-b6aa-b74f41fb7a09";
-            var product = new Products()
-            {   Id = Guid.Parse(id),
+            var product = new Products ()
+            {   
+                Id = Guid.Parse(id),
                 Name = "Updated",
                 UnitValue = 1.99,
                 Seller = "Success"
             };
 
             // Act
-            var response = await _client.PutAsync($"/api/products/{id}", product);
+            var response = await _client.PutAsJsonAsync($"/api/products?id={id}", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -97,7 +99,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await _client.PutAsync($"/api/products/{id}", product);
+            var response = await _client.PutAsJsonAsync($"/api/products?id={id}", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.NotFound);
@@ -116,7 +118,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await _client.PostAsync("/api/products", product);
+            var response = await _client.PostAsJsonAsync("/api/products", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
@@ -134,7 +136,7 @@ namespace Product.API.Tests
             };
 
             // Act
-            var response = await _client.PostAsync("/api/products", product);
+            var response = await _client.PostAsJsonAsync("/api/products", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.Created);

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d/lo7MvX2LIh35sv+KY2GzBZnTPI5g00QBn8vZJzKrlZo0EcrNungkevko1KTdOU4YPmh2w2QWoh4Ap+sIuPXA==",
+  "dgSpecHash": "yZKlUkut73lgwN0bClZrEOQX1/VZKKGzdcpD/8Np/RGv+/0yTRVMohU1nTVp3VCr7JQWZvoA/q302GVkZjlRmQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Tests\\Product.API.Tests.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\thaynacsf\\.nuget\\packages\\fluentassertions\\6.5.1\\fluentassertions.6.5.1.nupkg.sha512",
     "C:\\Users\\thaynacsf\\.nuget\\packages\\google.apis.core\\1.56.0\\google.apis.core.1.56.0.nupkg.sha512",
     "C:\\Users\\thaynacsf\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\thaynacsf\\.nuget\\packages\\json.net\\1.0.33\\json.net.1.0.33.nupkg.sha512",
     "C:\\Users\\thaynacsf\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\thaynacsf\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\thaynacsf\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
