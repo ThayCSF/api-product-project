@@ -171,7 +171,7 @@ namespace Product.API.Tests
         public async Task Delete_ExistentProduct_ShouldReturnOk()
         {
             // Arrange
-            var productId = Guid.Parse("44c8bbf7-f606-4196-97bb-7643efdba377");
+            var productId = Guid.Parse("5438d626-6a37-41d7-9b72-553216f579b1");
 
             // Act
             var response = await _client.DeleteAsync($"/api/products/{productId}");
