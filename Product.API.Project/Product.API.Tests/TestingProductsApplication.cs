@@ -1,10 +1,13 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Newtonsoft.Json;
 using Product.API.Project.Entities;
+using Product.API.Project.Shared;
 using System;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -27,14 +30,23 @@ namespace Product.API.Tests
         }
 
         [Fact(DisplayName = "Get all products")]
-        public async Task Get_AllProduct_ShouldReturnListWithContent()
+        public async Task Get_AllProducts_ShouldReturnListWithContent()
         {
             // Arrange
-            var pageNumber = 1;
-            var pageSize = 2;
+            var pageParam = new PageParameters()
+            {
+                PageNumber = 1, 
+                PageSize = 5 
+            };
+
+            var jsonSerialized = JsonConvert.SerializeObject(pageParam);
+
+            var httpContent = new StringContent(jsonSerialized, Encoding.UTF8, "application/json");
+
+            var request = new HttpRequestMessage(HttpMethod.Get, "/api/products") {Content = httpContent};
 
             // Act
-            var response = await _client.GetFromJsonAsync($"/api/products", pageNumber, pageSize); 
+            var response = await _client.SendAsync(request); 
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -159,7 +171,7 @@ namespace Product.API.Tests
         public async Task Delete_ExistentProduct_ShouldReturnOk()
         {
             // Arrange
-            var productId = Guid.Parse("85a3ad21-46f2-4dc6-be04-0245beb6299d");
+            var productId = Guid.Parse("44c8bbf7-f606-4196-97bb-7643efdba377");
 
             // Act
             var response = await _client.DeleteAsync($"/api/products/{productId}");

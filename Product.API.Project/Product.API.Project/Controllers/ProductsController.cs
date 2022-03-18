@@ -19,7 +19,7 @@ namespace Product.API.Project.Controllers
 
         // GET: api/Products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Products>>> GetProduct(PageParameters pageParameters)
+        public async Task<ActionResult<IEnumerable<Products>>> GetProducts(PageParameters pageParameters)
         {
              return Ok (_context.Set<Products>()
             .OrderBy(on => on.Name)
