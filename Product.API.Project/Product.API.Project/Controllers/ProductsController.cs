@@ -70,7 +70,7 @@ namespace Product.API.Project.Controllers
                 }
             }
 
-            return NoContent();
+            return Ok();
         }
 
         // POST: api/Products
@@ -97,7 +97,7 @@ namespace Product.API.Project.Controllers
             _context.Products.Remove(products);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
 
         private bool ProductsExists(Guid id)

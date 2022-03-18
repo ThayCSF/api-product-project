@@ -10,7 +10,7 @@ using Xunit;
 
 namespace Product.API.Tests
 {
-    public class TestingProductsApplication
+    public class TestingProductsApplication : IClassFixture<TestingProductsFactory>
 
     {
         private readonly HttpClient _client;
@@ -34,7 +34,7 @@ namespace Product.API.Tests
             var pageSize = 2;
 
             // Act
-            var response = await _client.GetAsync($"/api/products?pageNumber={pageNumber}pageSize={pageSize}"); 
+            var response = await _client.GetFromJsonAsync($"/api/products", pageNumber, pageSize); 
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -44,23 +44,23 @@ namespace Product.API.Tests
         public async Task Get_NonExistentProduct_ShouldReturnEmptyList()
         {
             // Arrange
-            var productId = "e978f409-9955-497d-8f97-917dfc054b80";
+            var productId = Guid.Parse("e978f409-9955-497d-8f97-917dfc054b80");
 
             // Act
-            var response = await _client.GetAsync($"/api/products?id={productId}");
+            var response = await _client.GetAsync($"/api/products/{productId}");
 
             // Assert
-            response.StatusCode.Should().Be(HttpStatusCode.NoContent);
+            response.StatusCode.Should().Be(HttpStatusCode.NotFound);
         }
 
         [Fact(DisplayName = "Get existent product")]
         public async Task Get_ExistentProduct_ShouldReturnContent()
         {
             // Arrange
-            var productId = "0f2130b5-025f-49c1-828e-d6c3f4da4dbc";
+            var productId = Guid.Parse("0f2130b5-025f-49c1-828e-d6c3f4da4dbc");
 
             // Act
-            var response = await _client.GetAsync($"/api/products?id={productId}");
+            var response = await _client.GetAsync($"/api/products/{productId}");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -70,17 +70,17 @@ namespace Product.API.Tests
         public async Task UpdateValidProduct_ShouldReturnOk()
         {
             // Arrange  
-            var id = "85a3ad21-46f2-4dc6-be04-0245beb6299d";
+            var id = Guid.Parse("3cdc11db-f582-435e-3800-08da08df494e");
             var product = new Products ()
             {   
-                Id = Guid.Parse(id),
+                Id = Guid.Parse("3cdc11db-f582-435e-3800-08da08df494e"),
                 Name = "Updated",
                 UnitValue = 19,
                 Seller = "Success"
             };
 
             // Act
-            var response = await _client.PutAsJsonAsync($"/api/products?id={id}", product);
+            var response = await _client.PutAsJsonAsync($"/api/products/{id}", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
@@ -90,16 +90,17 @@ namespace Product.API.Tests
         public async Task UpdateInvalidProduct_ShouldReturnNotFound()
         {
             // Arrange
-            var id = Guid.NewGuid;
+            var id = Guid.Parse("e978f409-9955-497d-8f97-917dfc054b80");
             var product = new Products()
             {
-                Name = "Updated",
+                Id= Guid.Parse("e978f409-9955-497d-8f97-917dfc054b80"),
+                Name = "Invalid",
                 UnitValue = 20,
-                Seller = "Success"
+                Seller = "Error"
             };
 
             // Act
-            var response = await _client.PutAsJsonAsync($"/api/products?id={id}", product);
+            var response = await _client.PutAsJsonAsync($"/api/products/{id}", product);
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.NotFound);
@@ -111,7 +112,6 @@ namespace Product.API.Tests
             // Arrange
             var product = new Products()
             {
-                Id = Guid.Empty,
                 Name = "",
                 UnitValue = 0,
                 Seller = ""               
@@ -130,9 +130,9 @@ namespace Product.API.Tests
             // Arrange
             var product = new Products()
             {
-                Name = "Tambor",
-                UnitValue = 29,
-                Seller = "Assa-Bloy"
+                Name = "New Product",
+                UnitValue = 55,
+                Seller = "Successfully added"
             };
 
             // Act
@@ -146,7 +146,7 @@ namespace Product.API.Tests
         public async Task Delete_NonExistentProduct_ShouldReturnNotFound()
         {
             // Arrange
-            var id = Guid.NewGuid;
+            var id = Guid.Empty;
 
             // Act
             var response = await _client.DeleteAsync($"/api/products/{id}");
@@ -159,10 +159,10 @@ namespace Product.API.Tests
         public async Task Delete_ExistentProduct_ShouldReturnOk()
         {
             // Arrange
-            var productId = "dfc89fda-d579-448f-82d5-422b6b103c29";
+            var productId = Guid.Parse("85a3ad21-46f2-4dc6-be04-0245beb6299d");
 
             // Act
-            var response = await _client.DeleteAsync($"/api/products/productId={productId}");
+            var response = await _client.DeleteAsync($"/api/products/{productId}");
 
             // Assert
             response.StatusCode.Should().Be(HttpStatusCode.OK);
