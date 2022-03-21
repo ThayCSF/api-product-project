@@ -12,13 +12,13 @@ services:
 
     integration-tests:
         container_name: integration-tests
-        image: mcr.microsoft.com/dotnet/sdk:5.0
+        image: mcr.microsoft.com/dotnet/sdk:6.0
         environment:  
           - ConnectionStrings__ProductContextDb=Data Source=ProductContextDb; Initial Catalog=ProductContextDb; User Id=sa; Password=Password1
         volumes: 
           - .:/Product.API.Project
           - ../Product.API.Tests:/Product.API.Tests
-        working_dir: /Product.API.Project
+        working_dir: /Product.API.Tests
         command:
           [
             "dotnet",
