@@ -69,7 +69,7 @@ namespace Product.API.Tests
         public async Task Get_ExistentProduct_ShouldReturnContent()
         {
             // Arrange
-            var productId = Guid.Parse("f17f8fd1-dd0a-47c4-914e-d58cfc35a400");
+            var productId = Guid.Parse("cca5714d-62fa-46a0-bc8a-4a52160090e9");
 
             // Act
             var response = await _client.GetAsync($"/api/products/{productId}");
@@ -82,10 +82,10 @@ namespace Product.API.Tests
         public async Task UpdateValidProduct_ShouldReturnOk()
         {
             // Arrange  
-            var id = Guid.Parse("f474ee88-0adc-48fb-8baa-4ce994dff2f1");
+            var id = Guid.Parse("c16b85ad-d25c-4023-8d67-5911bf29c18d");
             var product = new Products ()
             {   
-                Id = Guid.Parse("3cdc11db-f582-435e-3800-08da08df494e"),
+                Id = Guid.Parse("c16b85ad-d25c-4023-8d67-5911bf29c18d"),
                 Name = "Updated",
                 UnitValue = 19,
                 Seller = "Success"
@@ -171,7 +171,7 @@ namespace Product.API.Tests
         public async Task Delete_ExistentProduct_ShouldReturnOk()
         {
             // Arrange
-            var productId = Guid.Parse("4f2f277d-54d0-4949-8f0d-165d2ad9e27c");
+            var productId = Guid.Parse("6d017e5d-c446-4c42-9a2f-4f3036b8a4a8");
 
             // Act
             var response = await _client.DeleteAsync($"/api/products/{productId}");
