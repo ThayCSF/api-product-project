@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Product.API.Project/Product.API.Project.csproj": {}
+    "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj": {}
   },
   "projects": {
-    "/Product.API.Project/Product.API.Project.csproj": {
+    "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Product.API.Project/Product.API.Project.csproj",
+        "projectUniqueName": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj",
         "projectName": "Product.API.Project",
-        "projectPath": "/Product.API.Project/Product.API.Project.csproj",
-        "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/Product.API.Project/obj/",
+        "projectPath": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj",
+        "packagesPath": "C:\\Users\\thaynacsf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/root/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\thaynacsf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -99,7 +105,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
