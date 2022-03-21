@@ -69,7 +69,7 @@ namespace Product.API.Tests
         public async Task Get_ExistentProduct_ShouldReturnContent()
         {
             // Arrange
-            var productId = Guid.Parse("0f2130b5-025f-49c1-828e-d6c3f4da4dbc");
+            var productId = Guid.Parse("f17f8fd1-dd0a-47c4-914e-d58cfc35a400");
 
             // Act
             var response = await _client.GetAsync($"/api/products/{productId}");
@@ -82,7 +82,7 @@ namespace Product.API.Tests
         public async Task UpdateValidProduct_ShouldReturnOk()
         {
             // Arrange  
-            var id = Guid.Parse("3cdc11db-f582-435e-3800-08da08df494e");
+            var id = Guid.Parse("f474ee88-0adc-48fb-8baa-4ce994dff2f1");
             var product = new Products ()
             {   
                 Id = Guid.Parse("3cdc11db-f582-435e-3800-08da08df494e"),
@@ -171,7 +171,7 @@ namespace Product.API.Tests
         public async Task Delete_ExistentProduct_ShouldReturnOk()
         {
             // Arrange
-            var productId = Guid.Parse("5438d626-6a37-41d7-9b72-553216f579b1");
+            var productId = Guid.Parse("4f2f277d-54d0-4949-8f0d-165d2ad9e27c");
 
             // Act
             var response = await _client.DeleteAsync($"/api/products/{productId}");

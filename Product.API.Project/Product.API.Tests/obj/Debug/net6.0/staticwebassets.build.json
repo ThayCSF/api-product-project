@@ -1,20 +1,20 @@
 {
   "Version": 1,
-  "Hash": "/xL6dOv13l2wsIkvMwcUoHuKA53WCRhwHTNuQ3891x4=",
+  "Hash": "PjhqLNDlueVXtbD7qOyK9aZuvKVbAFdL3uAWUv+Y5l8=",
   "Source": "Product.API.Tests",
   "BasePath": "_content/Product.API.Tests",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [
     {
-      "Identity": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj",
+      "Identity": "/Product.API.Project/Product.API.Project.csproj",
       "Version": 2,
       "Source": "Product.API.Project",
       "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
-      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishProperties": "",
       "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
       "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
-      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildProperties": "",
       "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
     }
   ],

@@ -1,31 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Tests\\Product.API.Tests.csproj": {}
+    "/Product.API.Tests/Product.API.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj": {
+    "/Product.API.Project/Product.API.Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj",
+        "projectUniqueName": "/Product.API.Project/Product.API.Project.csproj",
         "projectName": "Product.API.Project",
-        "projectPath": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj",
-        "packagesPath": "C:\\Users\\thaynacsf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\obj\\",
+        "projectPath": "/Product.API.Project/Product.API.Project.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/Product.API.Project/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\thaynacsf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -105,40 +99,34 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Tests\\Product.API.Tests.csproj": {
+    "/Product.API.Tests/Product.API.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Tests\\Product.API.Tests.csproj",
+        "projectUniqueName": "/Product.API.Tests/Product.API.Tests.csproj",
         "projectName": "Product.API.Tests",
-        "projectPath": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Tests\\Product.API.Tests.csproj",
-        "packagesPath": "C:\\Users\\thaynacsf\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Tests\\obj\\",
+        "projectPath": "/Product.API.Tests/Product.API.Tests.csproj",
+        "packagesPath": "/root/.nuget/packages/",
+        "outputPath": "/Product.API.Tests/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\thaynacsf\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj": {
-                "projectPath": "C:\\Users\\thaynacsf\\Documents\\API_Product\\Product.API.Project\\Product.API.Project\\Product.API.Project.csproj"
+              "/Product.API.Project/Product.API.Project.csproj": {
+                "projectPath": "/Product.API.Project/Product.API.Project.csproj"
               }
             }
           }
@@ -216,7 +204,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }
