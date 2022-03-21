@@ -12,9 +12,9 @@ docker-compose up integration-tests
 ```
 
 ## Project SDK
-```
+
 - [.Net 6](https://dotnet.microsoft.com/download/dotnet/6.0)
-```
+
 
 ### Endpoints
 
