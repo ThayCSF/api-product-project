@@ -2,10 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Product.API.Project.Data;
-using System.Linq;
 
 namespace Product.API.Tests
 {
@@ -18,6 +15,7 @@ namespace Product.API.Tests
             {
                 var configuration = new ConfigurationBuilder()
                 .AddJsonFile("appsettings.json")
+                .AddEnvironmentVariables()
                 .Build();
 
                 config.AddConfiguration(configuration);
